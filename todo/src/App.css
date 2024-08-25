@@ -4,7 +4,7 @@
   --primary-color-light: hsl(200, 100%, 90%);
   --primary-color-dark: hsl(200, 100%, 40%);
   --danger-color: hsl(0, 100%, 40%);
-  --background-color: #333;
+  --background-color: #17302f;
   --text-color: var(--primary-color-light);
   --gap-small: 1vw;
   --gap-medium: 2vw;
@@ -65,7 +65,9 @@ body {
   border: 1px solid var(--danger-color);
   color: var(--primary-color-light);
 }
-
+.add-item{
+  text-align: center;
+}
 .btn.btn-danger:hover {
   background: hsl(0, 100%, 50%);
 }
