@@ -90,14 +90,35 @@ body {
 
 .new-item-form input:focus {
   border: 1px solid var(--primary-color-light);
+}.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1vh;
+}
+
+.count-container {
+  display: flex;
+  align-items: baseline; /* Aligns the text baselines for p and h2 */
+}
+
+.count-label {
+  font-size: 2.5vw; /* Smaller size for the label */
+  color: var(--primary-color-dark); /* Different color for the label */
+  margin-right: 0.5vw; /* Spacing between label and count */
+}
+
+.count {
+  font-size: 3vw;
+  color: var(--primary-color); /* Color for the count */
 }
 
 .header {
   font-size: 4vw;
-  margin-top: 2vh;
-  margin-bottom: 1vh;
   text-align: center;
+  margin: 0;
 }
+
 
 .list {
   margin: 0;

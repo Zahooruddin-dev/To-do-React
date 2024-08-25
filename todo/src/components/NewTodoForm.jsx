@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { TodoItem } from "./TodoItem"
 
 export function NewTodoForm({ onSubmit }) {
   const [newItem, setNewItem] = useState("")
@@ -15,7 +16,7 @@ export function NewTodoForm({ onSubmit }) {
   return (
     <form onSubmit={handleSubmit} className="new-item-form">
       <div className="form-row">
-        <label htmlFor="item">New Item</label>
+        <label htmlFor="item">Add Item</label>
         <input
           value={newItem}
           onChange={e => setNewItem(e.target.value)}
