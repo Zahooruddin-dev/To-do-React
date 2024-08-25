@@ -1,105 +1,134 @@
+:root {
+  --primary-color: hsl(200, 100%, 50%);
+  --primary-color-light: hsl(200, 100%, 90%);
+  --primary-color-dark: hsl(200, 100%, 40%);
+  --danger-color: hsl(0, 100%, 40%);
+  --background-color: #333;
+  --text-color: var(--primary-color-light);
+  --gap-small: 1vw;
+  --gap-medium: 2vw;
+  --padding-small: 1vw;
+  --padding-medium: 2vw;
+  --border-radius: 0.5vw;
+}
+
 * {
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
 
 body {
-  background: #333;
-  color: hsl(200, 100%, 90%);
-  max-width: 400px;
-  padding: 1rem;
+  background: var(--background-color);
+  color: var(--text-color);
+  max-width: 80vw;
+  padding: var(--padding-medium);
   margin: 0 auto;
 }
 
 .new-item-form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: var(--gap-small);
 }
 
 .form-row {
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: var(--gap-small);
 }
 
 .btn {
-  background: hsl(200, 100%, 50%, 0.1);
-  border: 1px solid hsl(200, 100%, 50%);
-  color: hsl(200, 100%, 50%);
-  padding: 0.25em 0.5em;
-  border-radius: 0.25em;
+  background: var(--primary-color-dark);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color-light);
+  padding: var(--padding-small) var(--padding-medium);
+  border-radius: var(--border-radius);
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background: var(--primary-color);
+}
+
+.btn:focus-visible,
+.btn:active {
+  background: var(--primary-color-light);
+  color: var(--primary-color-dark);
+  transform: scale(0.98);
   outline: none;
 }
 
-.btn:hover,
-.btn:focus-visible {
-  background: hsl(200, 100%, 50%, 0.2);
-}
-
 .btn.btn-danger {
-  background: hsl(0, 100%, 40%, 0.1);
-  border: 1px solid hsl(0, 100%, 40%);
-  color: hsl(0, 100%, 40%);
+  background: var(--danger-color);
+  border: 1px solid var(--danger-color);
+  color: var(--primary-color-light);
 }
 
-.btn.btn-danger:hover,
-.btn.btn-danger:focus-visible {
-  background: hsl(0, 100%, 40%, 0.2);
+.btn.btn-danger:hover {
+  background: hsl(0, 100%, 50%);
+}
+
+.btn.btn-danger:focus-visible,
+.btn.btn-danger:active {
+  background: hsl(0, 100%, 60%);
+  color: var(--primary-color-light);
+  transform: scale(0.98);
+  outline: none;
 }
 
 .new-item-form input {
   outline: none;
-  border: 1px solid hsl(200, 100%, 40%);
+  border: 1px solid var(--primary-color-dark);
   background: hsl(200, 100%, 30%);
-  border-radius: 0.25em;
-  padding: 0.25em 0.5em;
-  color: hsl(200, 100%, 90%);
+  border-radius: var(--border-radius);
+  padding: var(--padding-small);
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
 }
 
 .new-item-form input:focus {
-  border: 1px solid hsl(200, 100%, 70%);
+  border: 1px solid var(--primary-color-light);
 }
 
 .header {
-  font-size: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 4vw;
+  margin-top: 2vh;
+  margin-bottom: 1vh;
+  text-align: center;
 }
 
 .list {
   margin: 0;
   padding: 0;
-  margin-left: 1rem;
+  margin-left: var(--gap-medium);
   list-style: none;
-}
-
-.list li:has(input:checked) label {
-  color: hsl(200, 20%, 40%);
-}
-
-.list {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: var(--gap-small);
 }
 
 .list li {
   display: flex;
-  gap: 0.5rem;
+  gap: var(--gap-medium);
   align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.list li:hover {
+  transform: translateX(1vw);
 }
 
 .list li label {
   display: flex;
-  gap: 0.25rem;
+  gap: var(--gap-small);
   cursor: pointer;
   align-items: center;
+  transition: color 0.3s ease;
 }
 
 .list li:has(input:focus-visible) label {
-  outline: 1px solid hsl(200, 100%, 50%);
+  outline: 1px solid var(--primary-color);
 }
 
 .list li input {
@@ -114,24 +143,25 @@ body {
 .list li label::before {
   content: "";
   display: block;
-  width: 0.9rem;
-  height: 0.9rem;
-  background: hsl(200, 100%, 90%);
-  border-radius: 0.25em;
+  width: 2.5vw;
+  height: 2.5vw;
+  background: var(--primary-color-light);
+  border-radius: var(--border-radius);
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background 0.3s ease;
 }
 
 .list li label:hover::before {
-  background: hsl(200, 100%, 80%);
+  background: var(--primary-color);
 }
 
 .list li:has(input:checked) label::before {
   content: "✔";
-  background: hsl(200, 100%, 40%);
-  color: hsl(200, 100%, 90%);
-  font-size: 0.75rem;
+  background: var(--primary-color-dark);
+  color: var(--primary-color-light);
+  font-size: 1.5vw;
   font-weight: bold;
 }
 
