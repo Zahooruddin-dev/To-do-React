@@ -1,3 +1,4 @@
+
 :root {
   --primary-color: hsl(200, 100%, 50%);
   --primary-color-light: hsl(200, 100%, 90%);
@@ -38,8 +39,8 @@ body {
 }
 
 .btn {
-  background: var(--primary-color-dark);
-  border: 1px solid var(--primary-color);
+  background: hsl(182.18deg 100% 40%);
+  border: 1px solid hsl(187.68deg 100% 42.05%);
   color: var(--primary-color-light);
   padding: var(--padding-small) var(--padding-medium);
   border-radius: var(--border-radius);
@@ -79,8 +80,8 @@ body {
 
 .new-item-form input {
   outline: none;
-  border: 1px solid var(--primary-color-dark);
-  background: hsl(200, 100%, 30%);
+  border: 1px solid hsl(187.68deg 100% 42.05%);
+  background: hsl(187, 100%, 42%);
   border-radius: var(--border-radius);
   padding: var(--padding-small);
   color: var(--text-color);
@@ -166,5 +167,5 @@ body {
 }
 
 .list li:has(input:checked) label:hover::before {
-  background: hsl(200, 100%, 30%);
+  background: hsl(182, 100%, 30%);
 }
